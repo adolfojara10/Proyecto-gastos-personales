@@ -66,7 +66,7 @@ public class ControladorGastos extends Controlador<Gasto> {
         var listaGastos = findAll();
 
         listaGastos.forEach(gas -> {
-            if ((gas.getFecha().getMonth() + 1) == mes) {
+            if ((gas.getFecha().getMonth()) == mes) {
                 listaResultado.add(gas);
             }
         });

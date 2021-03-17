@@ -26,6 +26,7 @@ public class VentanaMostrarBalance extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form VentanaMostrarBalance
+     *
      * @param controladorAhorro
      * @param controladorGastos
      */

@@ -87,11 +87,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         balanceMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Gastos Personales");
 
         inicioMenu.setMnemonic('f');
         inicioMenu.setText("Inicio");
 
         categoriaMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        categoriaMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/categoryPequeño.jpg"))); // NOI18N
         categoriaMenuItem.setMnemonic('o');
         categoriaMenuItem.setText("Categoria");
         categoriaMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -102,6 +104,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         inicioMenu.add(categoriaMenuItem);
 
         gastoMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        gastoMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/speee.jpg"))); // NOI18N
         gastoMenuItem.setMnemonic('a');
         gastoMenuItem.setText("Gasto");
         gastoMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -112,6 +115,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         inicioMenu.add(gastoMenuItem);
 
         ahorroMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        ahorroMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/saving_1.jpg"))); // NOI18N
         ahorroMenuItem.setText("Ahorro");
         ahorroMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,6 +125,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         inicioMenu.add(ahorroMenuItem);
 
         exitMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE, 0));
+        exitMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/exit.jpg"))); // NOI18N
         exitMenuItem.setMnemonic('x');
         exitMenuItem.setText("Exit");
         exitMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -136,6 +141,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         helpMenu.setText("Gestion");
 
         vistaGastosMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        vistaGastosMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/b2_1.jpg"))); // NOI18N
         vistaGastosMenuItem.setMnemonic('c');
         vistaGastosMenuItem.setText("Vista Gastos");
         vistaGastosMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -146,6 +152,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         helpMenu.add(vistaGastosMenuItem);
 
         balanceMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        balanceMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/balance_1.jpg"))); // NOI18N
         balanceMenuItem.setText("Balance");
         balanceMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
