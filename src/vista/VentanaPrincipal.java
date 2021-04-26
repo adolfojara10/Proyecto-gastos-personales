@@ -5,10 +5,16 @@
  */
 package vista;
 
+import com.jgoodies.looks.plastic.PlasticLookAndFeel;
+import com.jgoodies.looks.plastic.theme.DarkStar;
 import controlador.ControladorAhorro;
 import controlador.ControladorBalance;
 import controlador.ControladorCategoria;
 import controlador.ControladorGastos;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.UIManager;
 
 /**
  *
@@ -55,6 +61,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         desktopPane.add(ventanaMostrarBalance);
 
         this.setExtendedState(VentanaPrincipal.MAXIMIZED_BOTH);
+        
     }
 
     public void cerrarVentanas() {
@@ -76,6 +83,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         desktopPane = new javax.swing.JDesktopPane();
+        foto = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         inicioMenu = new javax.swing.JMenu();
         categoriaMenuItem = new javax.swing.JMenuItem();
@@ -88,6 +96,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gastos Personales");
+
+        foto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fotos/revenue-icons-vector.png"))); // NOI18N
+        desktopPane.add(foto);
+        foto.setBounds(0, 0, 1345, 980);
 
         inicioMenu.setMnemonic('f');
         inicioMenu.setText("Inicio");
@@ -169,11 +181,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 644, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1003, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 562, Short.MAX_VALUE)
         );
 
         pack();
@@ -223,7 +235,37 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
+        
         try {
+            
+            UIManager.setLookAndFeel("com.jtattoo.plaf.hifi.HiFiLookAndFeel");
+            
+            /*PlasticLookAndFeel.setPlasticTheme(new DarkStar());
+            UIManager.setLookAndFeel("com.jgoodies.looks.plastic.PlasticLookAndFeel");*/
+            
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        
+        /* try {
+        for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+        if ("Nimbus".equals(info.getName())) {
+        javax.swing.UIManager.setLookAndFeel(info.getClassName());
+        break;
+        }
+        }
+        } catch (ClassNotFoundException ex) {
+        java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+        java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+        java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }*/
+        //</editor-fold>
+        
+       /* try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
@@ -238,7 +280,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
+        }*/
         //</editor-fold>
 
         /* Create and display the form */
@@ -255,6 +297,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem categoriaMenuItem;
     private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenuItem exitMenuItem;
+    private javax.swing.JLabel foto;
     private javax.swing.JMenuItem gastoMenuItem;
     private javax.swing.JMenu helpMenu;
     private javax.swing.JMenu inicioMenu;
