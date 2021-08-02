@@ -7,6 +7,7 @@ package controlador;
 
 import java.util.Collections;
 import java.util.List;
+import javax.persistence.NonUniqueResultException;
 import javax.persistence.Query;
 import modelo.Categoria;
 
@@ -23,9 +24,16 @@ public class ControladorCategoria extends Controlador<Categoria> {
     }
 
     public Categoria findByNombre(String nombre) {
-        Query consulta = getEm().createNamedQuery("Categoria.findByNombre");
-        consulta.setParameter("nombre", nombre);
-        return (Categoria) consulta.getSingleResult();
+        try {
+            Query consulta = getEm().createNamedQuery("Categoria.findByNombre");
+            consulta.setParameter("nombre", nombre);
+            return (Categoria) consulta.getSingleResult();
+        } catch (NonUniqueResultException e) {
+            Query consulta = getEm().createNamedQuery("Categoria.findByNombre");
+            consulta.setParameter("nombre", nombre);
+            System.out.println(consulta.getResultList());
+            return (Categoria) consulta.getResultList().get(0);
+        }
     }
 
     @Override

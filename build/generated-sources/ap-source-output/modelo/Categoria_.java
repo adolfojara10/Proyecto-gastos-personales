@@ -7,7 +7,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 import modelo.Ahorro;
 import modelo.Gasto;
 
-@Generated(value="org.eclipse.persistence.internal.jpa.modelgen.CanonicalModelProcessor", date="2021-03-16T19:19:57", comments="EclipseLink-2.7.7.v20200504-rNA")
+@Generated(value="org.eclipse.persistence.internal.jpa.modelgen.CanonicalModelProcessor", date="2021-04-26T10:26:36", comments="EclipseLink-2.7.7.v20200504-rNA")
 @StaticMetamodel(Categoria.class)
 public class Categoria_ { 
 
